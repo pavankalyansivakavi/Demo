@@ -1,0 +1,43 @@
+#%RAML 1.0
+title: learn
+
+/search:
+  get:
+    queryParameters:
+      keyword:
+        type: string
+        required: true
+        minLength: 5
+        maxLength: 6
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              
+              {"message" : "welcome to my first project"}
+/news:
+  post:
+    queryParameters:
+      country:
+        required: false
+    body:
+      application/json:
+        properties:
+          username:
+            required: true
+            minLength: 5
+            maxLength: 10
+          password:
+            required: true
+            minLength: 6
+            
+            maxLength: 8
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {"Indian News" : "Breaking News..."}
+
+        
